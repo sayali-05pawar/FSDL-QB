@@ -1,0 +1,48 @@
+<!-- 20. Create a Student Registration Form with fields such as Name, Email, Gender, Course, and
+Address, and apply proper styling. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2>Student Registration Form</h2>
+
+<form class="form">
+
+    <!-- Name -->
+    <label>Name:</label>
+    <input type="text" placeholder="Enter your name" required>
+
+    <!-- Email -->
+    <label>Email:</label>
+    <input type="email" placeholder="Enter your email" required>
+
+    <!-- Gender -->
+    <label>Gender:</label>
+    <input type="radio" name="gender"> Male
+    <input type="radio" name="gender"> Female
+
+    <!-- Course -->
+    <label>Course:</label>
+    <select>
+        <option>B.Tech</option>
+        <option>BCA</option>
+        <option>MCA</option>
+    </select>
+
+    <!-- Address -->
+    <label>Address:</label>
+    <textarea placeholder="Enter your address"></textarea>
+
+    <br><br>
+    <button type="submit">Register</button>
+
+</form>
+
+</body>
+</html>

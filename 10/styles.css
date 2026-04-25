@@ -1,0 +1,25 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+/* FAQ box */
+.faq {
+    width: 60%;
+    margin: 10px auto;
+    border: 1px solid black;
+    text-align: left;
+}
+
+/* Question */
+.question {
+    padding: 10px;
+    background: #eee;
+    cursor: pointer;
+}
+
+/* Answer (hidden by default) */
+.answer {
+    padding: 10px;
+    display: none;
+}

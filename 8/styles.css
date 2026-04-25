@@ -1,0 +1,29 @@
+body {
+    font-family: Arial;
+    text-align: center;
+}
+
+/* Gallery layout */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Image box */
+.img-box {
+    margin: 10px;
+    overflow: hidden;
+}
+
+/* Images */
+.img-box img {
+    width: 200px;
+    height: 200px;
+    transition: transform 0.3s;
+}
+
+/* Hover effect (zoom) */
+.img-box:hover img {
+    transform: scale(1.2);
+}

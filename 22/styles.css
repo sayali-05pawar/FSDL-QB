@@ -1,0 +1,38 @@
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* Header */
+.header {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Layout */
+.container {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    background: #f4f4f4;
+    padding: 10px;
+}
+
+/* Content */
+.content {
+    width: 75%;
+    padding: 10px;
+}
+
+/* Footer */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}

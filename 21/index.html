@@ -1,0 +1,78 @@
+<!-- 21. Develop a Weekly Timetable using HTML tables with appropriate use of rowspan and
+colspan. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weekly Timetable</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h2>Weekly Timetable</h2>
+
+<table border="1">
+
+    <tr>
+        <th>Day/Time</th>
+        <th>9-10</th>
+        <th>10-11</th>
+        <th>11-12</th>
+        <th>12-1</th>
+        <th>1-2</th>
+        <th>2-3</th>
+    </tr>
+
+    <!-- Monday -->
+    <tr>
+        <td>Monday</td>
+        <td>Math</td>
+        <td>Physics</td>
+        <td>Chemistry</td>
+        <td rowspan="5">Lunch</td> <!-- rowspan used -->
+        <td colspan="2">Lab</td> <!-- colspan used -->
+    </tr>
+
+    <!-- Tuesday -->
+    <tr>
+        <td>Tuesday</td>
+        <td>English</td>
+        <td>Math</td>
+        <td>Physics</td>
+        <td>Computer</td>
+        <td>Sports</td>
+    </tr>
+
+    <!-- Wednesday -->
+    <tr>
+        <td>Wednesday</td>
+        <td colspan="2">Workshop</td> <!-- colspan -->
+        <td>Chemistry</td>
+        <td>Math</td>
+        <td>Library</td>
+    </tr>
+
+    <!-- Thursday -->
+    <tr>
+        <td>Thursday</td>
+        <td>Physics</td>
+        <td>English</td>
+        <td>Math</td>
+        <td colspan="2">Seminar</td>
+    </tr>
+
+    <!-- Friday -->
+    <tr>
+        <td>Friday</td>
+        <td>Computer</td>
+        <td>Math</td>
+        <td>Physics</td>
+        <td>Sports</td>
+        <td>Project</td>
+    </tr>
+
+</table>
+
+</body>
+</html>
