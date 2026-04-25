@@ -1,14 +1,41 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-.skill{
-    margin: 15px 0;
+h1 {
+  text-align: center;
 }
 
-.skill-fill{
-    height:20px;
-    width:0;
-    background-color: blueviolet;
-    text-align: right;
+/* Skill container */
+.skill {
+  margin: 15px 0;
+}
+
+/* Skill name */
+.skill-name {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Bar background */
+.skill-bar {
+  width: 100%;
+  background-color: #eee;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Filled bar */
+.skill-fill {
+  height: 20px;
+  width: 0;
+  background-color: #4caf50;
+  border-radius: 20px;
+  text-align: right;
+  padding-right: 5px;
+  color: white;
+  font-size: 12px;
+  line-height: 20px;
+  transition: width 0.5s ease-in-out;
 }
