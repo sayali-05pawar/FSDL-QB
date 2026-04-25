@@ -1,28 +1,28 @@
-const skills = document.querySelectorAll(".skill-container");
+//Resuable function
 
-skills.forEach(skill => {
-    let name = skill.getAttribute("data-skill");
-    let percent = skill.getAttribute("data-percent");
+function createSkillBar(skillName,percentage){
+    const container = document.getElementById("skillsContainer");
 
-    // Create elements
-    let title = document.createElement("div");
-    title.className = "skill-name";
-    title.innerText = name;
+    const skillDiv = document.createElement("div");
+    skillDiv.classList.add("skill");
 
-    let bar = document.createElement("div");
-    bar.className = "skill-bar";
+    const name = document.createElement("div");
+    name.classList.add("skill-name");
+    name.textContent = skillName;
 
-    let fill = document.createElement("div");
-    fill.className = "skill-fill";
-    fill.innerText = percent + "%";
+    const fill = document.createElement("div");
+    fill.classList.add("skill-fill");
+    fill.textContent = percentage + "%";
 
-    // Append structure
+    const bar = document.createElement("div");
+    bar.classList.add("skill-bar");
+
     bar.appendChild(fill);
-    skill.appendChild(title);
-    skill.appendChild(bar);
+    skillDiv.appendChild(name);
+    skillDiv.appendChild(bar);
+    container.appendChild(skillDiv);
+}
 
-    // Animate width
-    setTimeout(() => {
-        fill.style.width = percent + "%";
-    }, 100);
-});
+createSkillBar("HTML",90);
+createSkillBar("Java",70);
+createSkillBar("Python",65);
