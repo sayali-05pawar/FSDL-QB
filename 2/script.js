@@ -24,9 +24,9 @@ function createSkillBar(skillName, percentage) {
   container.appendChild(skillDiv);
 
   // Animate width
-  setTimeout(() => {
-    fill.style.width = percentage + "%";
-  }, 100);
+  // setTimeout(() => {
+  fill.style.width = percentage + "%";
+  // }, 100);
 }
 
 // Example usage

@@ -27,3 +27,13 @@ fetch("data/products.json")
 
     })
     .catch(error => console.log("Error loading JSON:", error));
+
+
+{/* <div id="product-container">
+    <div id="card">
+        <img></img>
+        <h4></h4>
+        <p></p>
+        <button></button>
+    </div>
+</div> */}
