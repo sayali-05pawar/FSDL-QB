@@ -4,9 +4,9 @@ const Student = require('../models/Student');
 const getAllStudents = async (req, res) => {
     try {
         const students = await Student.find();
-        res.render('index', { students });
+        res.json(students); // 🔥 changed
     } catch (err) {
-        res.status(500).send('Error fetching students');
+        res.status(500).json({ error: 'Error fetching students' });
     }
 };
 
@@ -15,17 +15,12 @@ const createStudent = async (req, res) => {
     try {
         const { name, rollNo, branch } = req.body;
 
-        const newStudent = new Student({
-            name,
-            rollNo,
-            branch
-        });
-
+        const newStudent = new Student({ name, rollNo, branch });
         await newStudent.save();
 
-        res.redirect('/'); // 👈 important fix
+        res.json({ message: 'Student added successfully' }); // 🔥 changed
     } catch (err) {
-        res.status(500).send('Error creating student');
+        res.status(500).json({ error: 'Error creating student' });
     }
 };
 

@@ -11,14 +11,18 @@ connectDB();
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Static (optional)
 app.use(express.static('public'));
 
-// EJS setup
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+// API routes
+app.use('/api', router);
 
-// Routes
-app.use('/', router);
+// 🔥 Serve HTML from views folder
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
 
 // Server
 const PORT = process.env.PORT || 5000;

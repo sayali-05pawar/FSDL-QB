@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Student Record System</title>
+
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            flex: 1;
+        }
+
+        button {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        .empty {
+            text-align: center;
+            color: gray;
+        }
+    </style>
+    
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Student Record System</h1>
+
+        
+        <!-- Form -->
+        <form id="studentForm">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="text" name="rollNo" placeholder="Roll No" required>
+            <input type="text" name="branch" placeholder="Branch" required>
+            <button type="submit">Add</button>
+        </form>
+
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll No</th>
+                    <th>Branch</th>
+                </tr>
+            </thead>
+            <tbody id="studentTable">
+                <tr>
+                    <td colspan="3" class="empty">Loading...</td>
+                </tr>
+            </tbody>
+        </table>
+        
+
+    </div>
+
+    <script>
+        const table = document.getElementById('studentTable');
+        const form = document.getElementById('studentForm');
+
+        // Load students
+        async function loadStudents() {
+            try {
+                const res = await fetch('/api/students');
+                const data = await res.json();
+
+                table.innerHTML = '';
+
+                if (data.length === 0) {
+                    table.innerHTML = '<tr><td colspan="3" class="empty">No records found</td></tr>';
+                    return;
+                }
+
+                data.forEach(student => {
+                    table.innerHTML += `
+                    <tr>
+                        <td>${student.name}</td>
+                        <td>${student.rollNo}</td>
+                        <td>${student.branch}</td>
+                    </tr>
+                `;
+                });
+
+            } catch (err) {
+                table.innerHTML = '<tr><td colspan="3" class="empty">Error loading data</td></tr>';
+                console.error(err);
+            }
+        }
+
+        // Add student
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const student = {
+                name: form.name.value,
+                rollNo: form.rollNo.value,
+                branch: form.branch.value
+            };
+
+            try {
+                await fetch('/api/students', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(student)
+                });
+
+                form.reset();
+                loadStudents();
+
+            } catch (err) {
+                alert('Error adding student');
+                console.error(err);
+            }
+        });
+
+        // Initial load
+        loadStudents();
+    </script>
+
+</body>
+
+</html>

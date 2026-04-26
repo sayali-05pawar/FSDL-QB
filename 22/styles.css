@@ -1,38 +1,38 @@
 body {
-    font-family: Arial;
     margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-/* Header */
-.header {
+/* Header & Footer */
+header, footer {
     background: #333;
     color: white;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
 }
 
 /* Layout */
 .container {
     display: flex;
+    min-height: 80vh;
 }
 
 /* Sidebar */
-.sidebar {
-    width: 25%;
+aside {
+    flex: 1;
     background: #f4f4f4;
-    padding: 10px;
+    padding: 15px;
 }
 
 /* Content */
-.content {
-    width: 75%;
-    padding: 10px;
+main {
+    flex: 3;
+    padding: 15px;
 }
 
-/* Footer */
-.footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+/* Responsive (Mobile) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 }
