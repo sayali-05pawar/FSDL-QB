@@ -13,8 +13,6 @@ connectDB();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Static (optional)
-app.use(express.static('public'));
 
 // API routes
 app.use('/api', router);
