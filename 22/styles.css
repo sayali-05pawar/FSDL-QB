@@ -14,7 +14,7 @@ header, footer {
 /* Layout */
 .container {
     display: flex;
-    min-height: 80vh;
+    min-height: 800px;
 }
 
 /* Sidebar */
@@ -27,7 +27,7 @@ aside {
 /* Content */
 main {
     flex: 3;
-    padding: 15px;
+    /* padding: 15px; */
 }
 
 /* Responsive (Mobile) */
