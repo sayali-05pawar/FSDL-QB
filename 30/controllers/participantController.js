@@ -13,7 +13,7 @@ exports.registerParticipant = async (req, res) => {
 
         await participant.save();
 
-        res.sendFile("success.html", { root: "./views" });
+        res.json("student registered successfully")
 
     } catch (error) {
         console.error(error);
